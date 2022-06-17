@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/ok_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:alpha="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:transitionEasing="linear"
+            android:layout_marginBottom="16dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ok_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:text="@string/ok"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:alpha="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000" />
+</MotionScene>

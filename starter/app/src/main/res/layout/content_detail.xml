@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/anim"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DetailActivity"
     tools:showIn="@layout/activity_detail">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/filename_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:text="@string/file_name"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/status_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:text="@string/status"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/file_name_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/filename_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filename_label"
+        tools:text="FileName" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/status_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/status_label"
+        tools:text="Success" />
+
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:background="@color/colorAccent"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
